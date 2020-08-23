@@ -48,19 +48,19 @@
         markerStyle: {
             initial: {
                 fill: 'white',
-                stroke: '#008d8d',
+                stroke: 'red',
                 "fill-opacity": 1,
                 "stroke-width": 3,
                 r: 8.5
             },
             hover: {
-                fill: '#00b7b7',
-                stroke: 'white',
+                fill: 'red',
+                stroke: 'red',
                 "stroke-width": 2,
                 cursor: 'pointer'
             },
             selected: {
-                fill: '#006666',/*circle fill*/
+                fill: 'red',/*circle fill*/
                 "stroke-width": 3,
                 r: 10,
                 stroke: 'red',
@@ -69,7 +69,7 @@
         },
         regionStyle: {
             initial: {
-                fill: '#888f8f',/*map colour*/
+                fill: '#888f8f',
                 "fill-opacity": 1,
                 stroke: 'none',
                 "stroke-width": 0,
@@ -80,9 +80,60 @@
                 fill: ' #0d5a5a',/*map hover colour*/
                 cursor: 'default'
             }
-      }
+      },
+
+      onRegionTipShow: function (e, label, code) {
+        e.preventDefault(); 
+    /*el.html(el.html());*/
+},
+        markerLabelStyle: {
+          initial: {
+          fill: '#e67e00'
+          }
+        },
+
+      labels: {
+            markers: {
+                render: function(code) {
+                    if(code == '0') {
+                        return "Turkey";
+                    }
+                    if(code == '1') {
+                        return "Iran";
+                    }
+                    if(code == '2') {
+                        return "Algeria";
+                    }
+                    if(code == '3') {
+                      return "Spain"
+                    }
+                }
+            }
+        },
+
+        markers: [
+            {latLng: [39, 35]},/*Turkey*/
+            {latLng: [32, 53]},/*Iran*/
+            {latLng: [28, 3]},/*Algeria*/
+            {latLng: [40, -4]}],/*Spain*/
+
+
+        onMarkerClick: function(event, code){ 
+            if(code == '0') {    
+              window.location.replace('turkey.html');
+            } else if (code =='1'){
+              window.location.replace('IranProject.html');
+            } else if (code == '2'){
+              
+            }else if (code =='3') {
+              window.location.replace('Spain Final.html');
+            } else {
+              $("#markerSelected").text('');
+            }
+        }
       });
     });
+    
   </script>
 </body>
 </html>
