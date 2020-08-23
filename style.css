@@ -6,22 +6,18 @@ html {
     font-weight: 400;
   }
   
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  .u-clearfix:before,
-  .u-clearfix:after {
-    content: " ";
-    display: table;
-  }
-  
-  .u-clearfix:after {
-    clear: both;
-  }
-  
-  .u-clearfix {
-    *zoom: 1;
+  .navbar {
+    overflow: hidden;
+    background-color:white;
+  } 
+
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
   }
   
   
